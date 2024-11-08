@@ -80,7 +80,8 @@ How you approached the challenge:
    initially I considered working through it manually since we do that a lot already but then I realized I wasn't limited to that and wrote code on c to run the loops
 
 - Step 4:
-   ![Code on C](image.png)
+  ![Code on C](https://github.com/user-attachments/assets/2270bb2d-74a0-4e5b-a91d-48fb165152f1)
+
 
 - Output 
    ```jU5t_a_s1mpl3_an4gr4m_4_u_c79a21```
