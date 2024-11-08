@@ -50,4 +50,4 @@ What you learned through solving this challenge:
 References
 
 - [Signal()](https://www.tutorialspoint.com/c_standard_library/c_function_signal.htm)
-- [gets()]https://www.man7.org/linux/man-pages/man3/gets.3.html
+- [gets()](https://www.man7.org/linux/man-pages/man3/gets.3.html)
