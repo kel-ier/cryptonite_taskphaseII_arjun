@@ -26,3 +26,28 @@ What you learned through solving this challenge:
 
 Other incorrect methods you tried:
 - tried inputting random values > 64 in order to bypass the first function as I did not remember %114d
+
+
+# Buffer Overflow 0
+
+**Flag:** picoCTF{ov3rfl0ws_ar3nt_that_bad_ef01832d}
+
+How you approached the challenge:
+
+- Went off of instinct on a whim tried to overload the string because thats what was needed last time
+
+- Once the input was accepted, the vuln() function is called. Since the function is named vuln, I assumed thats where the key is
+
+- when vuln() is called, a string of size 16 is created, so I tried giving an input greater than 16 characters
+
+What you learned through solving this challenge:
+
+- Deeper understanding of the vulnerability of gets()
+
+- Tried understanding the signal() function
+
+
+References
+
+- [Signal()](https://www.tutorialspoint.com/c_standard_library/c_function_signal.htm)
+- [gets()]https://www.man7.org/linux/man-pages/man3/gets.3.html
