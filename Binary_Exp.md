@@ -15,7 +15,6 @@ How you approached the challenge:
 -step 5
     tried the other options successively for the servebob function until i received the flag 
 
-![screenshot](./screenshot.png)
 
 What you learned through solving this challenge:
 
