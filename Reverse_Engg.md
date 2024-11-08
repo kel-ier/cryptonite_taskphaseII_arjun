@@ -60,3 +60,36 @@ References
 - [reference 1](https://www.tutorialspoint.com/gnu_debugger/index.htm)
 - [reference 2](https://www.geeksforgeeks.org/gdb-step-by-step-introduction/)
 - Reference 3 : help command on GDB
+
+
+
+# vault-door-3
+
+**Flag:** picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_c79a21}
+
+How you approached the challenge:
+
+- step 1:
+   read through the java file to understand 
+
+
+- step 2:
+   The cheeckPassword() function creates a new string and then assigns data to it through the 'password' string
+
+- Step 3:
+   initially I considered working through it manually since we do that a lot already but then I realized I wasn't limited to that and wrote code on c to run the loops
+
+- Step 4:
+   ![Code on C](image.png)
+
+- Output 
+   ```jU5t_a_s1mpl3_an4gr4m_4_u_c79a21```
+
+
+What you learned through solving this challenge:
+
+1. Finally feel like I'm starting to think more in terms of whats right
+
+Other incorrect methods you tried:
+- Tried using string formatting similar to the previous challenge 
+- tried running the code by itself with
