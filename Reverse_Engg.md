@@ -10,7 +10,7 @@ sudo apt install gdb
 - step 2
 gdb debugger0_a
 
--step 3
+- step 3
 info functions
 ```
 0x0000000000001000  _init
@@ -25,7 +25,7 @@ info functions
 0x00000000000011b0  __libc_csu_fini
 0x00000000000011b8  _fini
 ```
--step 4
+- step 4
 disassmble main
 
 ```
@@ -46,7 +46,9 @@ Converted 0x86342 to decimal
 What you learned through solving this challenge:
 
 1. Basics of GDB 
-2. Concept of deassembling  
+2. Concept of deassembling
+
+
 Other incorrect methods you tried:
 
 - tried using info registers to get any data present inside %eax
