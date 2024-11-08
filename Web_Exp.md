@@ -3,12 +3,16 @@
 
 How you approached the challenge:
 
+
 -Step 1
     opened the link provided and checked for cookies 
+    
 - Step 2
     Used inspect element to check for cookies //similar to the OASIS ctf
+  
 -step 3
     changed the value of the cookie prrogressively, refreshing each time 
+    
 -step 4
     reached 18, flag appeared on screen
 
