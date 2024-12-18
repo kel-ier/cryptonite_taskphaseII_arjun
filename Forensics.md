@@ -40,3 +40,40 @@ References
 - [Wireshark](https://www.reddit.com/r/wireshark/comments/6ndvpq/extract_tftp_file_from_pcapng/)
 - [.deb](https://www.cyberciti.biz/faq/how-to-extract-a-deb-file-without-opening-it-on-debian-or-ubuntu-linux/)
 - [.bmp](https://coderanch.com/t/111069/os/bmp-file)
+
+
+
+
+# tunn3l v1s10n
+
+
+**Flag:** picoCTF{qu1t3_a_v13w_2020}
+
+How you approached the challenge:
+
+- step 1
+    Checked the file using file and exiftool
+
+- step 2 
+    File extension was bmp, so I chanegd it to that but couldn't open the file 
+
+- step 3
+    read about different operations that can be done on bmp files
+
+- step 4
+    tried to understand the meaning of the bits that are stored
+
+- step 5
+    changed different bits messing around, tried setting the height to equal the width and got the flaf
+
+
+What you learned through solving this challenge:
+
+1. understanding of the size for different parts of bmp files
+
+
+References
+
+- [BMP1](https://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm)
+- [BMP2](https://en.wikipedia.org/wiki/BMP_file_format)
+-  [editor](https://hexed.it/)
