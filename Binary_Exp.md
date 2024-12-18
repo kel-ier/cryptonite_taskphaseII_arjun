@@ -51,3 +51,44 @@ References
 
 - [Signal()](https://www.tutorialspoint.com/c_standard_library/c_function_signal.htm)
 - [gets()](https://www.man7.org/linux/man-pages/man3/gets.3.html)
+
+
+
+
+# Flag Leak 
+**Flag:** picoCTF{L34k1ng_Fl4g_0ff_St4ck_11a2b52a}
+
+How you approached the challenge:
+
+- step 1
+    started off by trying different format specifiers to get different outputs 
+
+- step 2
+    using %x gave me different values vor different positions like %1x,%2x
+
+- step 3
+    Used %$s repeatedly to try to get the flag
+
+- step 4
+    ran a for loop:
+    ```for i in {0..99}; do echo "%${i}\$s" | nc saturn.picoctf.net 52796 ; done```
+    to get the flag
+
+
+
+What you learned through solving this challenge:
+
+1. format string attacks
+2. for loops in bash
+
+
+Other incorrect methods you tried:
+- Tried overflowing the stack
+- Had to find out how to use varoables in for loops
+
+References
+
+- [Format String attacks](https://ctf101.org/binary-exploitation/what-is-a-format-string-vulnerability/)
+- [For loops](https://www.redhat.com/en/blog/bash-scripting-loops)
+
+
