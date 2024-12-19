@@ -94,3 +94,28 @@ What you learned through solving this challenge:
 Other incorrect methods you tried:
 - Tried using string formatting similar to the previous challenge 
 - tried running the code by itself with
+
+
+#ARMssembly 1
+
+**Flag:** picoCTF{0000001B}
+
+I went through the entire script in order to understand what was happening, starting with the function:
+
+![image](https://github.com/user-attachments/assets/f19507c2-5859-4ce1-aa2a-7777ea81334a)
+
+then moved to main to finish the last part:
+
+![image](https://github.com/user-attachments/assets/c728ad74-48a1-4db4-8bfa-6567bf42d05f)
+
+What you learned through this challenge:
+1. Basics of assembly including registers and movement through the stack
+
+References:
+- [ARMsembbly 0](https://www.youtube.com/watch?v=1d-6Hv1c39c)
+- [WZR](https://developer.arm.com/documentation/dui0801/l/Overview-of-AArch64-state/Registers-in-AArch64-state)
+- [lsl](https://www.studocu.com/en-us/document/massachusetts-institute-of-technology/computer-system-architecture/shift-and-rotate-instructions/54580778)
+- [sdiv](https://developer.arm.com/documentation/dui0473/m/arm-and-thumb-instructions/sdiv)
+
+
+
