@@ -125,3 +125,27 @@ Data for buffer: 12345678123456781234567812345678pico
 this changed the safe variable to pico and I was able to print the flag
 
 
+
+# Two-Sum
+
+**Flag:** picoCTF{Tw0_Sum_Integer_Bu773R_0v3rfl0w_e06700c0}
+
+Challenge was pretty basic, as soon as I ran the command it gave me the following prompt:
+```
+n1 > n1 + n2 OR n2 > n1 + n2
+
+What two positive numbers can make this possible: 
+```
+I entered two random integers above the threshold for integers in C and received the flag 
+
+## Challenges faced:
+
+- When I first input the values on my attempt the program got stuck and didn't produce an output so I thought it wasn't the write answer
+
+
+## References 
+- [Integer Overflow](https://www.sciencedirect.com/topics/computer-science/integer-overflow#:~:text=An%20integer%20overflow%20occurs%20when,meaning%20that%20anything%20might%20happen)
+
+- [Range](https://stackoverflow.com/questions/69668387/what-does-data-type-range-really-means#:~:text=The%20C%20standard%20dictates%20that,but%20it%20can%20be%20more.)
+
+
