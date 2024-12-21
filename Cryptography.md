@@ -71,3 +71,83 @@ this produced the flag as the output
 - [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 - [small e](https://ir0nstone.gitbook.io/crypto/rsa/public-exponent-attacks/small-e)
 - [gmpy2](https://readthedocs.org/projects/gmpy2/downloads/pdf/latest/)
+
+
+
+# C3
+
+**Flag:** picoCTF{adlibs}
+
+When we start we are presented with this python script:
+```
+import sys
+chars = ""
+from fileinput import input
+for line in input():
+  chars += line
+
+lookup1 = "\n \"#()*+/1:=[]abcdefghijklmnopqrstuvwxyz"
+lookup2 = "ABCDEFGHIJKLMNOPQRSTabcdefghijklmnopqrst"
+
+out = ""
+
+prev = 0
+for char in chars:
+  cur = lookup1.index(char)
+  out += lookup2[(cur - prev) % 40]
+  prev = cur
+
+sys.stdout.write(out)
+
+```
+
+the actual conversion part is done in the for loop and begins with finding the index of the character from the ciphertext in lookup1, however lookup1 has no capital letters as are present in the text, so we negin be switching lookup 1 and 2.
+```
+
+for char in chars:
+  cur = lookup1.index(char)
+  out += lookup2[(cur - prev) % 40]
+  prev = cur
+
+```
+
+It seemed like I was just reversing the program here so I switched the - for +, and tried switching around the assignments
+```
+for char in chars:
+  cur = lookup1.index(char)
+  new = lookup2[(cur + prev) % 40]
+  out += new
+  prev = lookup2.index(new)
+
+```
+When fed the ciphertext, it produced another python script with the tags python2 and self input
+```
+#asciiorder
+#fortychars
+#selfinput
+#pythontwo
+
+chars = ""
+from fileinput import input
+for line in input():
+    chars += line
+b = 1 / 1
+
+for i in range(len(chars)):
+    if i == b * b * b:
+        print chars[i] #prints
+        b += 1 / 1
+
+```
+I ran the following commands:
+
+```
+cat ciphertext | python3 convert.py >> c3.py
+cat c3.py | python2 c3.py
+
+```
+and got the flag as the output
+
+## Where I went wrong
+
+- I made many mistakes while trying to reverse the encoder, going on many different tangents
