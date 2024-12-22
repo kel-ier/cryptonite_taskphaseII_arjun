@@ -12,7 +12,7 @@ Other incorrect methods you tried:
 
 
 
-# Caesr
+# Caesar
 
 **Flag:** picoCTF{crossingtherubicondjneoach}
 
@@ -151,3 +151,83 @@ and got the flag as the output
 ## Where I went wrong
 
 - I made many mistakes while trying to reverse the encoder, going on many different tangents
+
+
+# Custom Encryption 
+
+**Flag:** picoCTF{custom_d2cr0pt6d_019c831c}
+
+The challenge provided a python script that would encrypt a message in two steps. It has the encrypt function and the 
+def dynamic_xor_encrypt function:
+```
+def encrypt(plaintext, key):
+    cipher = []
+    for char in plaintext:
+        cipher.append(((ord(char) * key*311)))
+    return cipher
+
+def dynamic_xor_encrypt(plaintext, text_key):
+    cipher_text = ""
+    key_length = len(text_key)
+    for i, char in enumerate(plaintext[::-1]):
+        key_char = text_key[i % key_length]
+        encrypted_char = chr(ord(char) ^ ord(key_char))
+        cipher_text += encrypted_char
+    return cipher_text
+
+```
+
+So I reveresed the two functions in steps to get these:
+```
+def decrypt(ciphertext,key):
+  plaintext = ""
+  for num in ciphertext:
+   plaintext+=chr(int(num/key/311))
+  return plaintext
+  
+def dynamic_xor_encrypt(plaintext, text_key):
+    cipher_text = ""
+    key_length = len(text_key)
+    for i, char in enumerate(plaintext[::-1]):
+        key_char = text_key[i % key_length]
+        encrypted_char = chr(ord(char) ^ ord(key_char))
+        cipher_text += encrypted_char
+    return cipher_text
+```
+
+the test function would generate a key based on two prime number p,q and two random numbers a,b. However, in the cipher text we were provided with a value for a and b. I then switched around the calling of the functions to get this:
+```
+def test():
+    test_key = "trudeau"
+    p = 97
+    g = 31
+    if not is_prime(p) and not is_prime(g):
+        print("Enter prime numbers")
+        return
+    a = 88 #randint(p-10, p)
+    b = 26 #randint(g-10, g)
+    print(f"a = {a}")
+    print(f"b = {b}")
+    u = generator(g, a, p)
+    v = generator(g, b, p)
+    key = generator(v, a, p)
+    b_key = generator(u, b, p)
+    shared_key = None
+    if key == b_key:
+        shared_key = key
+    else:
+        print("Invalid key")
+        return
+    
+    cipher =  [97965, 185045, 740180, 946995, 1012305, 21770, 827260, 751065, 718410, 457170, 0, 903455, 228585, 54425, 740180, 0, 239470, 936110, 10885, 674870, 261240, 293895, 65310, 65310, 185045, 65310, 283010, 555135, 348320, 533365, 283010, 76195, 130620, 185045]
+    semi_cipher = decrypt(cipher,shared_key)
+    plain = dynamic_xor_decrypt(semi_cipher,test_key)
+    print(f'plain is: {plain[::-1]}')
+```
+this provided the flag when run.
+
+# Challenges face:
+- made quite a few errors while reversing the program
+
+# What I learned:
+- the usage of __name__ == __main__ in python
