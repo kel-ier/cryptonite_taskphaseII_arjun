@@ -10,8 +10,11 @@
 
 # Print the gifts
 
-Began the program and tried the various types of format string attacks to try and receive different outputs
-When passing %s, I received part of the next prompt which and so I tried different configurations to try and receive more outputs
+## How I approached the challenge:
+
+- Began the program and tried the various types of format string attacks to try and receive different outputs
+- When passing %s, I received part of the next prompt which
+-  I tried different configurations to try and receive more outputs
 
 # Backtrack 
 
