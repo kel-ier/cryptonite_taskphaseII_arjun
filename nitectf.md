@@ -2,12 +2,14 @@
 
 ## How I approached the challenge:
 
-First went through the website and the login page
-looked through the script and the different files to find anything related to the username or the password 
-opened the website on burpsuite to and passed the request for the username and the password to the repeater, there I tried changing some of the attributes and the values to find different responses 
+- First went through the website and the login page
+- looked through the script and the different files to find anything related to the username or the password 
+- opened the website on burpsuite to and passed the request for the username and the password to the repeater
+-  there I tried changing some of the attributes and the values to find different responses 
 
 
 # Print the gifts
+
 Began the program and tried the various types of format string attacks to try and receive different outputs
 When passing %s, I received part of the next prompt which and so I tried different configurations to try and receive more outputs
 
